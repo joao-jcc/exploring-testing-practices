@@ -40,3 +40,43 @@ Com base nos dados obtidos, selecione uma prática ou dado de teste relevante e 
 **1. Repositório selecionado:** `<URL_DO_REPOSITÓRIO_AQUI>`
 
 **2. Explicação:** `<SUA_EXPLICAÇÃO_AQUI>`
+
+
+## Respostas
+
+**1. Repositório selecionado:** `https://github.com/psf/requests`
+
+**2. Explicação:**
+
+### Prática analisada: Crescimento progressivo da suíte de testes entre versões
+
+O repositório `psf/requests` é a biblioteca HTTP mais popular do Python (53.9k ⭐). A análise no TestMiner revela como a suíte de testes evoluiu de forma consistente ao longo das versões do projeto.
+
+#### Estrutura atual (branch `main`)
+
+| Categoria | Qtd |
+|---|---|
+| Source Files | 66 |
+| Tests | 10 |
+| Test Helpers | 12 |
+| CI Tests | 1 |
+
+Os 10 arquivos de teste cobrem áreas bem delimitadas: `adapters`, `hooks`, `lowlevel`, `requests`, `structures`, `utils`, entre outros. Os 12 Test Helpers fornecem infraestrutura de apoio (certificados SSL, servidor local, compatibilidade). Toda a suíte está organizada na pasta `tests/`, separada do código-fonte — prática que facilita manutenção e execução independente dos testes.
+
+#### Histórico de testes por versão
+
+| Versão | Arquivos de teste |
+|---|---|
+| 0.2.0 | 1 |
+| 0.9.0 | 2 |
+| 2.0.1 | 1 |
+| 2.16.2 | 8 |
+| 2.33.1 | 10 |
+
+O projeto iniciou com apenas 1 arquivo de teste e chegou a 10 na versão atual. O salto mais expressivo ocorre entre as versões 2.0.1 e 2.16.2 — período de maior amadurecimento da biblioteca, quando funcionalidades como autenticação avançada, proxies e SSL foram consolidadas e ganharam cobertura dedicada.
+
+O CI Test (`run`) só aparece a partir da versão 2.33.1, evidenciando a adoção recente de integração contínua via GitHub Actions para execução automática dos testes a cada commit.
+
+#### Conclusão
+
+O crescimento da suíte acompanhando o produto demonstra maturidade técnica: cada nova área funcional ganhou seu próprio arquivo de teste. Dado que `requests` é usada por milhões de projetos, essa disciplina é essencial para garantir que regressões sejam detectadas antes de chegarem aos usuários finais.
